@@ -34,18 +34,21 @@ def merge(path, name):
         p2 = '%s/kinect-%s' % (path, name_c)
         if os.path.exists(p2):
             part2 = genfromtxt(p2, delimiter=',')
+            part2 = part2[:, 1:]
         else:
-            part2 = np.zeros((m, 28))
+            part2 = np.zeros((m, 27))
         p3 = '%s/audio-%s' % (path, name_c)
         if os.path.exists(p3):
             part3 = genfromtxt(p3, delimiter=',')
+            part3 = part3[:, 1:]
         else:
-            part3 = np.zeros((m, 37))
+            part3 = np.zeros((m, 36))
         p4 = '%s/face_nn-%s' % (path, name_c)
         if os.path.exists(p4):
             part4 = genfromtxt(p4, delimiter=',')
+            part4 = part4[:, 1:]
         else:
-            part4 = np.zeros((m, 101))
+            part4 = np.zeros((m, 100))
         parts = np.hstack((part1, part2, part3, part4))
         np.savetxt(input_folder + '/' + name_c, parts, delimiter=',')
 
