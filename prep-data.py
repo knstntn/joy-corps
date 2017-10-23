@@ -5,6 +5,17 @@ import pandas as pd
 from numpy import genfromtxt
 import csv
 import time
+
+'''
+If your input path is .../data/train, when you run the code(pre-data) successfully, 
+in .../data folder you will get the results, they are folders:
+Extended: All the input file to expand
+Input: All the input files are integrated
+Labels: All output files
+Input.csv:  All the input files are integrated to a file
+Output.csv: All the output files are integrated to a file
+#  You can also explain this more in detail
+'''
 def extend(x, y, path, extended_folder, names):
     z = []
     nn = 0
