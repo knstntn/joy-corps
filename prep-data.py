@@ -13,7 +13,7 @@ def extend(x, y, path, extended_folder, names):
         if m<1 :
             z.append(y[nn,:])
             nn += 1
-        if x[m,0]> y[nn-1,0]:
+        elif x[m,0]> y[nn-1,0]:
             if x[m,0]> y[nn,0]:
                 z.append(y[nn,:])
                 if nn < n-1:
