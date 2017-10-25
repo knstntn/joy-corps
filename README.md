@@ -7,7 +7,10 @@ First, create new folder (\*) which we will use for the project - feel free to u
 ```shell
 $ mkdir ~/workspace/dc
 ```
-
+## Install
+```shell
+$ pip install -r requirements.txt
+```
 ## GitHub 
 We host our project on github and therefore we will need to interact with github a lot. But you have to provide your username and password each time you want to push or pull data to and from github. As one of the options to simplify that you could setup ssh keys with github:
 https://help.github.com/articles/connecting-to-github-with-ssh/
