@@ -41,11 +41,8 @@ if __name__ == '__main__':
     else:
         train_data = os.listdir(path)
         train_set, test_set = train_test_split(train_data, random_state=1, train_size=0.8) # split dataset
-        train_set = train_data
-        path1 = 'C:/Users/sheng/Downloads/Compressed/data_3/data/input'
-        test_set = os.listdir(path1)
         if os.path.isfile('lr1.model'):
-            lr = joblib.load('lr1.model') # load model
+            lr = joblib.load('lr1.model') # load model if you want to change model's params, should change the model name, the same with line 62 
         else:
             for i, train_name in enumerate(train_set):
                 if i == 0:
