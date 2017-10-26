@@ -9,3 +9,7 @@ pandas==0.20.3
 python-dateutil==2.6.1    # via pandas
 pytz==2017.2              # via pandas
 six==1.11.0               # via python-dateutil
+jupyter==1.0.0
+matplotlib==2.1.0
+scipy==0.19.1
+scikit-learn==0.19.0
