@@ -1,3 +1,9 @@
+"""
+This module contains different useful utilitiy methods.
+"""
+
+from math import sqrt
+
 import numpy as np
 
 
@@ -7,6 +13,15 @@ def mean(array, window=None):
     """
     this = __import__(__name__)
     return np.mean(this.window(array, window))
+
+
+def qmean(array, window=None):
+    """
+    Returns root mean square - RMS / rms / quadratic mean - for the given array (or its subarray if window is provided)
+    """
+    this = __import__(__name__)
+    array = this.window(array, window)
+    return sqrt(sum(n * n for n in array) / len(array))
 
 
 def median(array, window=None):
@@ -73,12 +88,10 @@ def window(array, window=None):
     >>> utils.window(data, (2, 1))
     [2, 3, 4]
     """
-    ar = np.array(array)
-
     if window is not None:
         min = window[0] - window[1]
         max = window[0] + window[1] + 1
 
-        return ar[min: max]
+        return array[min: max]
 
-    return ar
+    return array
