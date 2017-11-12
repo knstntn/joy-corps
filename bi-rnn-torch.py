@@ -45,7 +45,7 @@ if __name__ == '__main__':
     t0 = time.time()
     sequence_length = 169
     input_size = 16
-    hidden_size = 50
+    hidden_size = 120
     num_layers = 2
     num_classes = 6
     batch_size = 16
