@@ -12,9 +12,9 @@ import warnings
 warnings.filterwarnings('ignore')
 import os
 os.environ['OMP_NUM_THREADS'] = '4'
-EMBEDDING_FILE = 'E:/IDM download/crawl-300d-2M.vec'
-train = pd.read_csv('E:/IDM download/train.csv')
-test = pd.read_csv('E:/IDM download/test.csv')
+EMBEDDING_FILE = 'E:/IDM download/crawl-300d-2M.vec' # need search the "crawl-300d-2M.vec" and download
+train = pd.read_csv('E:/IDM download/train.csv')# change the path
+test = pd.read_csv('E:/IDM download/test.csv')# change the path
 submission = pd.read_csv('E:/IDM download/sample_submission.csv')
 
 X_train = train["comment_text"].fillna("fillna").values
