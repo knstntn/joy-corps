@@ -18,8 +18,8 @@ from keras.callbacks import EarlyStopping, ModelCheckpoint
 max_features = 20000
 maxlen = 100
 
-train = pd.read_csv("E:/IDM download/train.csv")
-test = pd.read_csv("E:/IDM download/test.csv")
+train = pd.read_csv("E:/IDM download/train.csv") #1. change the path
+test = pd.read_csv("E:/IDM download/test.csv")# 2.change the path
 train = train.sample(frac=1)
 
 list_sentences_train = train["comment_text"].fillna("CVxTz").values
@@ -59,7 +59,7 @@ callbacks_list = [checkpoint, early] #early
 model.fit(X_t, y, batch_size=batch_size, epochs=epochs, validation_split=0.1, callbacks=callbacks_list)
 model.load_weights(file_path)
 y_test = model.predict(X_te)
-sample_submission = pd.read_csv("E:/IDM download/sample_submission.csv")
+sample_submission = pd.read_csv("E:/IDM download/sample_submission.csv") # 3. # change the path
 sample_submission[list_classes] = y_test
 sample_submission.to_csv("baseline.csv", index=False)
 # lstm:64, dropout: .1, densse: 32, dropout: .2, epochs: 5
