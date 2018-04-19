@@ -44,10 +44,22 @@ def preprocess_input(comment):
     return comment
 
 data.comment_text = data.comment_text.apply(lambda row: preprocess_input(row))
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+vect = TfidfVectorizer(min_df=0.1, max_df=0.7, 
+                       analyzer='char',
+                       ngram_range=(1, 3),
+                       strip_accents='unicode',
+                       sublinear_tf=True,
+                       max_features=30000
+                      )
 
 test = data[train_rows:]
 train = data[:train_rows]
 del data
+vect = vect.fit(train.comment_text)
+train = vect.transform(train.comment_text)
+test = vect.transform(test.comment_text)
 
 for c in cols:
     clf = LogisticRegression()
